@@ -14,6 +14,7 @@
 		44792843240E43A600AE0E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44792842240E43A600AE0E7D /* Assets.xcassets */; };
 		44792846240E43A600AE0E7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44792844240E43A600AE0E7D /* LaunchScreen.storyboard */; };
 		44792851240E43A600AE0E7D /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44792850240E43A600AE0E7D /* FoodTrackerTests.swift */; };
+		44C7E92A240FE738005E6D8A /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7E929240FE738005E6D8A /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		4479284C240E43A600AE0E7D /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44792850240E43A600AE0E7D /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		44792852240E43A600AE0E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44C7E929240FE738005E6D8A /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				4479283B240E43A400AE0E7D /* SceneDelegate.swift */,
 				4479283D240E43A400AE0E7D /* ViewController.swift */,
 				4479283F240E43A400AE0E7D /* Main.storyboard */,
+				44C7E929240FE738005E6D8A /* RatingControl.swift */,
 				44792842240E43A600AE0E7D /* Assets.xcassets */,
 				44792844240E43A600AE0E7D /* LaunchScreen.storyboard */,
 				44792847240E43A600AE0E7D /* Info.plist */,
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C7E92A240FE738005E6D8A /* RatingControl.swift in Sources */,
 				4479283E240E43A400AE0E7D /* ViewController.swift in Sources */,
 				4479283A240E43A400AE0E7D /* AppDelegate.swift in Sources */,
 				4479283C240E43A400AE0E7D /* SceneDelegate.swift in Sources */,
