@@ -17,8 +17,13 @@ class MealTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
-        loadSampleMeals()
+        if let savedMeals = loadMeals() {
+            meals += savedMeals
+        } else {
+            loadSampleMeals()
+        }
     }
+    
 
     // MARK: - Navigation
     
@@ -73,6 +78,7 @@ class MealTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             meals.remove(at: indexPath.row)
+            saveMeals()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             
@@ -94,6 +100,7 @@ class MealTableViewController: UITableViewController {
                 meals.append(meal)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            saveMeals()
         }
     }
     
@@ -114,5 +121,26 @@ class MealTableViewController: UITableViewController {
             fatalError("Unable to instantiate meal3")
         }
         meals += [meal1, meal2, meal3]
+    }
+    
+    private func saveMeals() {
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: meals, requiringSecureCoding: false)
+            try data.write(to: Meal.ArchiveURL)
+        } catch {
+            print("Failed to save meals...")
+        }
+    }
+    
+    private func loadMeals() -> [Meal]? {
+        do {
+            let data = try Data(contentsOf: Meal.ArchiveURL)
+            if let meals = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as! [Meal]? {
+                return meals
+            }
+        } catch {
+            print("Couldn't read file")
+        }
+        return nil
     }
 }
